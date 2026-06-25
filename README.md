@@ -47,8 +47,8 @@ graph TD
     class P1,S1,F1,F2,O1,G1A desc;
 ```
 
-## How to Run Gazebo Simulation for Each Algorithm
-You can run each SLAM algorithm in the Gazebo simulation environment by specifying the `run_mode` and `perception_model`. 
+## How to Run for Each Algorithm
+You can run each SLAM algorithm by specifying the `run_mode` and `perception_model`. 
 
 To run **ORB-SLAM3**:
 ```bash
@@ -64,7 +64,7 @@ To run **RTAB-Map**:
 ```bash
 ros2 launch slam_fusion eval_rtabmap.launch.py run_mode:=simulation perception_model:=sam2
 ```
-*(Note: You can change `perception_model:=sam2` to `perception_model:=deeplabv3` to test the classical baseline).*
+*(Note: You can change `perception_model:=sam2` to `perception_model:=deeplabv3` to test the classical baseline. Additionally, you can change `run_mode:=simulation` to `run_mode:=dataset` to run with datasets instead of the Gazebo simulation).*
 
 ## Running the Error Calculation
 Once a simulation is finished, trajectories are saved to evaluate the geometric accuracy. You can use the provided bash script to calculate the Absolute Trajectory Error (ATE) and Relative Pose Error (RPE) using `evo`.
